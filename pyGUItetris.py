@@ -27,6 +27,8 @@ blocks = [
 
 ]
 
+curBlock = []
+
 def init_board():
     global board
     board = [[0 for i in range(10)] for i in range(20)] ##comprehension -> for i in range(20): board.append(); for j in range(10): board[i].append();
@@ -46,6 +48,9 @@ def print_stack():
     return
 
 def create_block():
+    return
+
+def turn_block():
     return
 
 if __name__ == "__main__":
