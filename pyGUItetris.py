@@ -64,6 +64,13 @@ def print_stack():
     return
 
 def set_curBlock():
+    global stack
+    global curBlock
+    curBlock = stack[0]
+    for n in range(1,3):
+        stack[n-1] = stack[n]
+    
+    stack[2] = choice_block()
     return
 
 def stackIsFull():  ##stack이 차있는가?
@@ -75,6 +82,10 @@ def create_block():
 def turn_block():
     return
 
+##최종 실행 코드
+def play():
+    return
+
 
 ##main
 if __name__ == "__main__":
@@ -82,6 +93,10 @@ if __name__ == "__main__":
     init_stack()
     print_board()
     print("\n")
+    print_stack()
+    set_curBlock()
+    print("\n")
+    print(curBlock)
     print_stack()
     
 
