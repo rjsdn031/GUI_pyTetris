@@ -34,6 +34,20 @@ blocks = [
 stack = []
 curBlock = []
 
+class game:
+    def start():
+        return
+
+class block:
+    shape = 0
+    dir = 0     ##0도, 90도, 180도 270도 -> dir*90으로 판정
+
+    def __init__(self) -> None:
+        self.shape = ran.randint(6)
+        self.dir = 0
+
+
+
 def init_board():
     global board
     board = [[0 for i in range(10)] for i in range(20)] ##comprehension -> for i in range(20): board.append(); for j in range(10): board[i].append();
