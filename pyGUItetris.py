@@ -1,5 +1,5 @@
 ## GUI TETRIS on PYTHON ##
-## 20210630 ##
+## 2021924 - non-list ##
 
 
 # board == playboard
@@ -33,6 +33,20 @@ blocks = [
 
 stack = []
 curBlock = []
+
+class game:
+    def start():
+        return
+
+class block:
+    shape = 0
+    dir = 0     ##0도, 90도, 180도 270도 -> dir*90으로 판정
+
+    def __init__(self) -> None:
+        self.shape = ran.randint(6)
+        self.dir = 0
+
+
 
 def init_board():
     global board
@@ -73,7 +87,7 @@ def set_curBlock():
     stack[2] = choice_block()
     return
 
-def stackIsFull():  ##stack이 차있는가?
+def stackIsFull():  ##stack이 차있는가? --> 필요한 코드인가?
     return
 
 def create_block():
@@ -89,16 +103,6 @@ def play():
 
 ##main
 if __name__ == "__main__":
-    init_board()
-    init_stack()
-    print_board()
-    print("\n")
-    print_stack()
-    set_curBlock()
-    print("\n")
-    print(curBlock)
-    print_stack()
-    
+    play()
 
-    # how to make timer?
-    # 일단 구현하고 나중에 객체지향 시스템으로 바꾼다.
+    
