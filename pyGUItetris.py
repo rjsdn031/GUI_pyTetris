@@ -9,42 +9,62 @@ from tkinter import * ## tkinter 기반 gui 구현.
 import random as ran
 import time
 
-board = []
+board = [] # 0:empty, 1:block, 9:wall
+stack = []
+
+##Class block 관련
 blocks = [
 
-        [[1,1,1],
+        [[0,0,0]
+         [1,1,1],
          [0,1,0]],
 
         [[0,1,1],
-         [1,1,0]],
+         [1,1,0]
+         [0,0,0]],
 
         [[1,1,0],
-         [0,1,1]],
+         [0,1,1]
+         [0,0,0]],
 
         [[0,0,1],
-         [1,1,1]],
+         [1,1,1]
+         [0,0,0]],
 
-        [[1,1,1,1]],
+        [[1,0,0],
+         [1,1,1]
+         [0,0,0]],
+
+        [[0,1,0,0]
+         [0,1,0,0]
+         [0,1,0,0]
+         [0,1,0,0]],
 
         [[1,1],
          [1,1]],
-
 ]
 
-stack = []
-curBlock = []
+curBlock = [] ##curBlock : Block
 
-class game:
+class Game:
     def start():
         return
 
-class block:
-    shape = 0
-    dir = 0     ##0도, 90도, 180도 270도 -> dir*90으로 판정
+class Block:
+    shape = 0   #블럭의 모양
+    dir = 0     #0도, 90도, 180도 270도 -> dir*90으로 판정
+    size = 0
 
-    def __init__(self) -> None:
-        self.shape = ran.randint(6)
+    def __init__(self):
+        self.shape = ran.randint(7)
         self.dir = 0
+        self.size = len(blocks[self.shape][0])
+        
+        return
+    
+    def update(self):
+        return
+
 
 
 
@@ -62,7 +82,7 @@ def print_board():
     return
 
 def choice_block():
-    i = ran.randrange(6)
+    i = ran.randint(7)
     return blocks[i]
 
 def init_stack():
@@ -90,19 +110,5 @@ def set_curBlock():
 def stackIsFull():  ##stack이 차있는가? --> 필요한 코드인가?
     return
 
-def create_block():
-    return
-
-def turn_block():
-    return
-
-##최종 실행 코드
-def play():
-    return
-
-
-##main
-if __name__ == "__main__":
-    play()
 
     
