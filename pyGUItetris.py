@@ -97,18 +97,18 @@ def print_stack():
         print(i, end=" ")
     return
 
-def set_curBlock():
-    global stack
-    global curBlock
-    curBlock = stack[0]
-    for n in range(1,3):
-        stack[n-1] = stack[n]
+# def set_curBlock():
+#     global stack
+#     global curBlock
+#     curBlock = stack[0]
+#     for n in range(1,3):
+#         stack[n-1] = stack[n]
     
-    stack[2] = choice_block()
-    return
+#     stack[2] = choice_block()
+#     return
 
-def stackIsFull():  ##stack이 차있는가? --> 필요한 코드인가?
-    return
+# def stackIsFull():  ##stack이 차있는가? --> 필요한 코드인가?
+#     return
 
 
     
